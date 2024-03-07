@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#262626',
+                    },
+                    fontFamily: {
+                        indie: ['Indie Flower', 'cursive']    
+                    },
+                    spacing:{
+                        hh:'100px',
+                        hw:'100%',
+                        himg:'12px',
+                        hgap:'6px'
+                    },
+                    backgroundImage:{
+                        img:"url('/img/background.svg')"
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="./js/main.js" type="module" defer></script>
+    <title>Acme Filmes - Home</title>
+</head>
+<body class="bg-background">
+    <header class="h-hh w-hw bg-black bg-opacity-25">
+        <div class="
+            flex
+            justify-between
+        ">
+            <img src="./img/acme_logo-removebg-preview 1.svg" alt="">
+            <div class="flex items-center gap-hgap">
+                <p class="text-white">Acessar perfil</p>
+                <img src="./img/Vector.png" alt="" class="w-himg h-himg">
+            </div>
+        </div>
+    </header>
+</body>
+</html>
