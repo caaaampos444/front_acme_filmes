@@ -16,7 +16,8 @@
                         indie: ['Indie Flower', 'cursive']    
                     },
                     fontSize:{
-                        titulo:'40px'
+                        titulo:'40px',
+                        welcome:'60px'
                     },
                     spacing:{
                         hh:'100px',
@@ -26,10 +27,13 @@
                         hpadding:'20px',
                         mw:'100%',
                         mpadding:'30px',
-                        mgap:'100px'
+                        mgap:'100px',
+                        mdivposterw:'450px',
+                        mdivposterh:'700px'
                     },
                     backgroundImage:{
-                        img:"url('/img/background.svg')"
+                        img:"url('/img/background.svg')",
+                        hdivbg:"url('./img/SD_card_1920x1080px 1.svg')"
                     }
                 }
             }
@@ -56,7 +60,10 @@
                 </div>
             </div>
         </div>
-        <img src="./img/SD_card_1920x1080px 1.svg" alt="">
+        <div class="flex justify-center items-center">
+            <img src="./img/SD_card_1920x1080px 1.svg" alt="" class="">
+            <p class="z-10 text-white absolute text-welcome font-bold">Bem-vindo à Acme</p>
+        </div>
     </header>
 
 
@@ -64,34 +71,11 @@
 
 
     <main class="flex flex-wrap w-mw p-mpadding gap-mgap">
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
-        <div class="flex flex-col">
-            <img src="./img/poster filme.svg" alt="">
-            <p class="text-titulo text-white font-bold">Bird Box</p>
-        </div>
+        
     </main>
+
+
+
+
 </body>
 </html>

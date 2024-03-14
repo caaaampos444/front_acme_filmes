@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background:'#262626',
+                        btncolor:'#FE0000'
+                    },
+                    fontFamily: {
+                        indie: ['Indie Flower', 'cursive']    
+                    },
+                    fontSize:{
+                        titulo:'94px',
+                        sinopse:'20px',
+                        btn:'26px'
+                    },
+                    spacing:{
+                        bdyh:'100vh',
+                        bdypadding:'60px',
+                        bdygap:'30px',
+                        sinopsew:'800px',
+                        btnw:'480px',
+                        btnh:'100px',
+                        divgap:'40px'
+                    },
+                    backgroundImage:{
+                        img:"url('/img/background.svg')",
+                        hdivbg:"url('./img/SD_card_1920x1080px 1.svg')"
+                    },
+                    borderRadius:{
+                        btnr:'20px'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="./js/main.js" type="module" defer></script>
+    <title></title>
+</head>
+<body class="h-bdyh bg-background p-bdypadding flex gap-bdygap">
+    <img src="../img/poster filme.svg" alt="">
+    <div class="flex flex-col justify-between">
+        <div class="gap-divgap flex-col flex">
+            <div>
+                <p class="text-white text-titulo">Bird Box</p>
+                <p class="text-white text-sinopse w-sinopsew">Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.</p>
+            </div>
+            <p class="text-green-600 text-sinopse">R$39</p>
+            <button class="bg-btncolor rounded-btnr text-white h-btnh w-btnw text-btn">Assistir</button>
+        </div>
+        <div class="flex flex-row gap-divgap">
+            <p class="text-white text-sinopse">Duração: 2h</p>
+            <p class="text-white text-sinopse">Lançado em: 2019</p>
+        </div>
+    </div>
+</body>
+</html>
