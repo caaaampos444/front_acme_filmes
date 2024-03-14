@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/acme_logo-removebg-preview 1.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,11 +15,18 @@
                     fontFamily: {
                         indie: ['Indie Flower', 'cursive']    
                     },
+                    fontSize:{
+                        titulo:'40px'
+                    },
                     spacing:{
                         hh:'100px',
                         hw:'100%',
                         himg:'12px',
-                        hgap:'6px'
+                        hgap:'6px',
+                        hpadding:'20px',
+                        mw:'100%',
+                        mpadding:'30px',
+                        mgap:'100px'
                     },
                     backgroundImage:{
                         img:"url('/img/background.svg')"
@@ -31,17 +39,59 @@
     <title>Acme Filmes - Home</title>
 </head>
 <body class="bg-background">
-    <header class="h-hh w-hw bg-black bg-opacity-25">
-        <div class="
-            flex
-            justify-between
-        ">
-            <img src="./img/acme_logo-removebg-preview 1.svg" alt="">
-            <div class="flex items-center gap-hgap">
-                <p class="text-white">Acessar perfil</p>
-                <img src="./img/Vector.png" alt="" class="w-himg h-himg">
+
+
+
+
+    <header class="flex flex-col">
+        <div class="w-hw bg-black bg-opacity-65 absolute">
+            <div class="
+                flex
+                justify-between
+            ">
+                <img src="./img/acme_logo-removebg-preview 1.svg" alt="">
+                <div class="flex items-center gap-hgap p-hpadding">
+                    <p class="text-white">Acessar perfil</p>
+                    <img src="./img/Vector.png" alt="" class="w-himg h-himg">
+                </div>
             </div>
         </div>
+        <img src="./img/SD_card_1920x1080px 1.svg" alt="">
     </header>
+
+
+
+
+
+    <main class="flex flex-wrap w-mw p-mpadding gap-mgap">
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+        <div class="flex flex-col">
+            <img src="./img/poster filme.svg" alt="">
+            <p class="text-titulo text-white font-bold">Bird Box</p>
+        </div>
+    </main>
 </body>
 </html>
