@@ -3,8 +3,12 @@
 import { getFilmes, getFilmeByID } from "./filmes.js"
 
 function criarCard(filme){
+    
     const button=document.createElement('button')
     button.classList.add('bg-transparent')
+    const id=filme.id
+    button.id=id
+    button.onclick=setIDFilme
     const card=document.createElement('div')
     const poster=document.createElement('img')
     poster.src=filme.foto_capa
@@ -23,9 +27,14 @@ async function preencherContainer(){
     filmes.forEach (filme=>{
         const card=criarCard(filme)
         container.appendChild(card)
-        console.log(filme)
+        //console.log(filme)
     })
 }
 
+async function setIDFilme(){
+    const idFilme=this.id
+    localStorage.setItem('idFilme',idFilme)
+    window.location.href='../html/filme.html'
+}
+
 preencherContainer()
-criarCard()
