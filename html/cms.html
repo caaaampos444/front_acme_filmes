@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background:'#262626',
+                        btncolor:'#FE0000'
+                    },
+                    fontFamily: {
+                        indie: ['Indie Flower', 'cursive']    
+                    },
+                    fontSize:{
+                        titulo:'40px',
+                    },
+                    spacing:{
+                        hdrpad:'10px'
+                    },
+                    backgroundImage:{
+                        img:"url('/img/background.svg')",
+                        hdivbg:"url('./img/SD_card_1920x1080px 1.svg')"
+                    },
+                    borderRadius:{
+                        btnr:'20px'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="../js/cms.js" type="module" defer></script>
+    <title>CMS</title>
+</head>
+<body class="bg-background">
+    <header class="flex justify-center text-white text-titulo p-hdrpad">CMS ACME</header>
+    <main><input type="date" name="" id=""></main>
+</body>
+</html>

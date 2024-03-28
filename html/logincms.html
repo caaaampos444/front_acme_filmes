@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background:'#262626',
+                        btncolor:'#FE0000',
+                        divbg:'#000000'
+                    },
+                    fontFamily: {
+                        indie: ['Indie Flower', 'cursive']    
+                    },
+                    fontSize:{
+                        universal:'20px',
+                    },
+                    spacing:{
+                        bdygap:'60px',
+                        hdrimg:'400px',
+                        mh:'100%',
+                        maindivh:'600px',
+                        maindivw:'1000px',
+                        inputw:'600px',
+                        inputh:'40px',
+                        inputpadding:'14px',
+                        inputsgap:'20px',
+                        divpadding:'30px',
+                        divgap:'90px',
+                        btnh:'60px',
+                        btnw:'230px'
+                    },
+                    backgroundImage:{
+                        img:"url('/img/background.svg')",
+                        hdivbg:"url('./img/SD_card_1920x1080px 1.svg')"
+                    },
+                    borderRadius:{
+                        div:'12px',
+                        input:'8px',
+                        btn:'12px'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="../js/logincms.js" type="module" defer></script>
+    <title>CMS - Login</title>
+</head>
+<body class="flex flex-col bg-background gap-bdygap">
+    <header class="w-hdrw flex justify-center">
+        <img src="../img/acme_logo-removebg-preview 1.svg" alt="" class="w-hdrimg">
+    </header>
+
+    <main class="h-mh flex justify-center items-center">
+
+
+        <div class="gap-divgap p-divpadding flex flex-col items-center w-maindivw bg-divbg opacity-75 rounded-div">
+            <p class="text-white text-universal">Login - CMS</p>
+            <div class="flex flex-col gap-inputsgap">
+                <div>
+                    <p class="text-white text-universal">E-mail</p>
+                    <input type="text" name="" id="email" placeholder="Digite o seu e-mail" class="p-inputpadding h-inputh rounded-input w-inputw">
+                </div>
+                <div>
+                    <p class="text-white text-universal">Senha</p>
+                    <input type="password" name="" id="senha" placeholder="Digite a sua senha" class="p-inputpadding w-inputw h-inputh rounded-input">
+                </div>
+            </div>
+            <button id="btn" class="text-universal text-white bg-btncolor rounded-btn h-btnh w-btnw">
+                Entrar
+            </button>
+        </div>
+
+
+    </main>
+</body>
+</html>

@@ -5,7 +5,7 @@ import { getFilmes, getFilmeByID } from "./filmes.js"
 function criarCard(filme){
     
     const button=document.createElement('button')
-    button.classList.add('bg-transparent')
+    button.classList.add('bg-transparent', 'transform', 'motion-safe:hover:scale-110')
     const id=filme.id
     button.id=id
     button.onclick=setIDFilme
