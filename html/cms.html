@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,7 +20,15 @@
                         titulo:'40px',
                     },
                     spacing:{
-                        hdrpad:'10px'
+                        hdrpad:'10px',
+                        mainh:'100%',
+                        bdyh:'100vh',
+                        posterw:'150px',
+                        posterh:'200px',
+                        sinopsemaxw:'500px',
+                        datarelancamentow:'200px',
+                        deletarh:'50px',
+                        deletarw:'50px',
                     },
                     backgroundImage:{
                         img:"url('/img/background.svg')",
@@ -35,8 +44,47 @@
     <script src="../js/cms.js" type="module" defer></script>
     <title>CMS</title>
 </head>
-<body class="bg-background">
+<body class="bg-background h-bdyh">
     <header class="flex justify-center text-white text-titulo p-hdrpad">CMS ACME</header>
-    <main><input type="date" name="" id=""></main>
+    
+    <main class="h-mainh flex justify-center">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 ">
+                            Título
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Sinopse
+                        </th>
+                        <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                            Duração
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Data de lançamento
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Data de relançamento
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Foto da capa
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Valor
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Deletar
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Editar
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </main>
+
 </body>
 </html>

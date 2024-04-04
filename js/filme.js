@@ -33,16 +33,30 @@ async function preencherTela(){
     const footer=document.createElement('div')
     footer.classList.add('flex', 'flex-row', 'gap-divgap')
     const duracao=document.createElement('p')
-    duracao.textContent=`Duração: ${filme.duracao}`
+    const duracao_exemplo=filme.duracao
+    duracao.textContent=`Duração: ${duracao_exemplo.substring(11, 19)}`
     duracao.classList.add('text-white', 'text-sinopse')
     const lancamento=document.createElement('p')
-    lancamento.textContent=`Lançado em: ${filme.data_lancamento}`
+    const lancamento_exemplo=filme.data_lancamento
+    lancamento.textContent=`Lançado em: ${lancamento_exemplo.substring(0, 10)}`
     lancamento.classList.add('text-white', 'text-sinopse')
-    footer.append(duracao, lancamento)
-    titles.append(titulo, sinopse)
-    header.append(titles, preco, btnAssistir)
-    contents.append(header, footer)
-    body.append(poster, contents)
+    if(filme.data_relancamento==null){
+        footer.append(duracao, lancamento)
+        titles.append(titulo, sinopse)
+        header.append(titles, preco, btnAssistir)
+        contents.append(header, footer)
+        body.append(poster, contents)
+    }else{
+        const relancamento=document.createElement('p')
+        const relancamento_exemplo=filme.data_relancamento
+        relancamento.textContent=`Relançado em: ${relancamento_exemplo.substring(0, 10)}`
+        relancamento.classList.add('text-white', 'text-sinopse')
+        footer.append(duracao, lancamento, relancamento)
+        titles.append(titulo, sinopse)
+        header.append(titles, preco, btnAssistir)
+        contents.append(header, footer)
+        body.append(poster, contents)
+    }
 }
 
 preencherTela()
