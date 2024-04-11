@@ -52,7 +52,7 @@ function criarTr(filme){
     deletarImg.src='../img/delete_icon.png'
     const deletarBtn=document.createElement('button')
     deletarBtn.id=id
-    deletarBtn.onclick=setIDFilmeDelete
+    deletarBtn.onclick=deletarFilme
 
     const editar=document.createElement('td')
     editar.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800')
@@ -61,7 +61,7 @@ function criarTr(filme){
     editarImg.classList.add('h-deletarh', 'w-deletarw')
     const editarBtn=document.createElement('button')
     editarBtn.id=id
-    editarBtn.onclick=deletarFilme
+    editarBtn.onclick=editarFilme
 
     editarBtn.append(editarImg)
     editar.append(editarBtn)
