@@ -3,8 +3,6 @@
 import { getFilmes, deleteFilme, postFilme } from "./filmes.js"
 
 function criarTr(filme){
-    const table=document.getElementById('tbody')
-
     const tr=document.createElement('tr')
     tr.classList.add('bg-white', 'border-b', 'dark:bg-gray-800', 'dark:border-gray-700')
 
@@ -63,7 +61,7 @@ function criarTr(filme){
     editarImg.classList.add('h-deletarh', 'w-deletarw')
     const editarBtn=document.createElement('button')
     editarBtn.id=id
-    editarBtn.onclick=setIDFilmeEdit
+    editarBtn.onclick=deletarFilme
 
     editarBtn.append(editarImg)
     editar.append(editarBtn)
@@ -71,6 +69,7 @@ function criarTr(filme){
     deletar.append(deletarBtn)
     foto_capa_td.append(foto_capa)
     tr.append(titulo, sinopse, duracao, data_lancamento, data_relancamento, foto_capa_td, valor, deletar, editar)
+   
     return tr
 }
 
@@ -83,18 +82,15 @@ async function preencherTela(){
     });
 }
 
-function setIDFilmeDelete(){
+async function deletarFilme(){
     const idFilmeDelete=this.id
-    console.log(idFilmeDelete)
-    localStorage.setItem('idFilmeDelete', idFilmeDelete)
-    deleteFilme(idFilmeDelete)
+    await deleteFilme(idFilmeDelete)
     window.location.reload()
 }
 
-function setIDFilmeEdit(){
+function editarFilme(){
     const idFilmeEdit=this.id
     console.log(idFilmeEdit)
-    localStorage.setItem('idFilmeEdit', idFilmeEdit)
 }
 
 preencherTela()
