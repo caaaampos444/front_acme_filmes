@@ -26,7 +26,7 @@ export async function postFilme(filme){
 }
 
 export async function deleteFilme(id){
-    const url=`http://localhost:8080/v2/acmefilmes/deletefilme/${id}`
+    const url=`http://localhost:8080/v2/acmefilmes/filme/delete/${id}`
     const options={
         method:'DELETE'
     }
