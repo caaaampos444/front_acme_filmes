@@ -11,6 +11,10 @@ function criarTr(ator){
     nome.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-900', 'font-medium', 'text-gray-900', 'whitespace-nowrap' ,'dark:text-white')
     nome.textContent=ator.nome
     
+    const biografia=document.createElement('td')
+    biografia.classList.add('px-6', 'py-4', 'bg-white', 'max-w-sinopsemaxw')
+    biografia.textContent=ator.biografia
+
     const data_nascimento=document.createElement('td')
     data_nascimento.classList.add('px-6', 'py-4', 'bg-white', 'max-w-sinopsemaxw')
     const data_nascimento_exemplo=ator.data_nascimento
@@ -26,9 +30,7 @@ function criarTr(ator){
     }
 
     
-    const biografia=document.createElement('td')
-    biografia.classList.add('px-6', 'py-4', 'bg-white', 'max-w-sinopsemaxw')
-    biografia.textContent=ator.biografia
+    
 
     const foto_capa_td=document.createElement('td')
     foto_capa_td.classList.add('px-6', 'py-4', 'bg-white')
@@ -36,14 +38,17 @@ function criarTr(ator){
     foto_capa.classList.add('h-posterh', 'w-posterw')
     foto_capa.src=ator.foto
 
-    const duracao=document.createElement('td')
-    duracao.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800')
-    const duracao_exemplo=ator.duracao
-    duracao.textContent=duracao_exemplo.substring(11, 19)
+    const sexo=document.createElement('td')
+    sexo.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800')
+    sexo.textContent=ator.sexo[0].nome
 
-    const valor=document.createElement('td')
-    valor.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800')
-    valor.textContent=ator.valor_unitario
+    const nacionalidadeTd=document.createElement('td')
+    let arrayNacionalidades=[]
+    nacionalidadeTd.classList.add('px-6', 'py-4', 'bg-white')
+    ator.nacionalidade.forEach(nacionalidade => {
+        arrayNacionalidades=nacionalidade.nome
+        nacionalidadeTd.textContent=arrayNacionalidades
+    });
 
     const id=ator.id
     const deletar=document.createElement('td')
@@ -69,7 +74,7 @@ function criarTr(ator){
     deletarBtn.append(deletarImg)
     deletar.append(deletarBtn)
     foto_capa_td.append(foto_capa)
-    tr.append(nome, biografia, duracao, data_nascimento, data_falecimento, foto_capa_td, valor, deletar, editar)
+    tr.append(nome, biografia, data_nascimento, data_falecimento, foto_capa_td, sexo, nacionalidadeTd, deletar, editar)
    
     return tr
 }
@@ -78,7 +83,6 @@ async function preencherTela(){
     const table=document.getElementById('tbody')
     const atores=await getAtores()
     atores.forEach(ator => {
-        console.log(ator)
         const tr=criarTr(ator)
         table.append(tr)
     });
@@ -95,5 +99,4 @@ function editarAtor(){
     console.log(idAtorEdit)
 }
 
-console.log(getAtores())
 preencherTela()

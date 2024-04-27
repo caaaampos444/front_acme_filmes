@@ -2,7 +2,6 @@ export async function getAtores(){
     let url='http://localhost:8080/v2/acmefilmes/atores'
     const response=await fetch(url)
     const data=await response.json()
-    console.log(data)
     return data.atores
 }
 
