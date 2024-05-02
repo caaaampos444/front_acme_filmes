@@ -1,6 +1,6 @@
 'use strict'
 
-import { getAtores, getAtorByID, deleteAtor, postAtor, putAtor } from "./atores.js"
+import { getAtores, deleteAtor, postAtor, putAtor } from "./atores.js"
 
 function criarTr(ator){
     const tr=document.createElement('tr')

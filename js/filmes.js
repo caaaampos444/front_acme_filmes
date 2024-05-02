@@ -13,7 +13,7 @@ export async function getFilmeByID(id){
 }
 
 export async function postFilme(filme){
-    const url='http://localhost:8080/v2\/acmefilmes/filme'
+    const url= 'http://localhost:8080/v2/acmefilmes/filme/insert'
     const options={
         method: 'POST',
         headers: {
