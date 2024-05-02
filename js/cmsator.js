@@ -42,22 +42,22 @@ function criarTr(ator){
     sexo.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800')
     sexo.textContent=ator.sexo[0].nome
 
-    const nacionalidadeTd=document.createElement('td')
-    let arrayNacionalidades=[]
-    nacionalidadeTd.classList.add('px-6', 'py-4', 'bg-white')
+    const nacionalidadeTd = document.createElement('td')
+    let arrayNacionalidades = []
+    nacionalidadeTd.classList.add('px-6', 'py-4', 'bg-white', 'max-w-[180px]')
     ator.nacionalidade.forEach(nacionalidade => {
-        arrayNacionalidades=nacionalidade.nome
-        nacionalidadeTd.textContent=arrayNacionalidades
-    });
+        arrayNacionalidades.push(nacionalidade.nome)
+    })
+    const todasNacionalidades = arrayNacionalidades.join(', ')
+    nacionalidadeTd.textContent = todasNacionalidades
 
-    const id=ator.id
     const deletar=document.createElement('td')
     deletar.classList.add('px-6', 'py-4', 'bg-white')
     const deletarImg=document.createElement('img')
     deletarImg.classList.add('h-deletarh', 'w-deletarw')
     deletarImg.src='../img/delete_icon.png'
     const deletarBtn=document.createElement('button')
-    deletarBtn.id=id
+    deletarBtn.id=ator.id
     deletarBtn.onclick=deletarAtor
 
     const editar=document.createElement('td')
@@ -66,7 +66,7 @@ function criarTr(ator){
     editarImg.src='../img/edit_icon.png'
     editarImg.classList.add('h-deletarh', 'w-deletarw')
     const editarBtn=document.createElement('button')
-    editarBtn.id=id
+    editarBtn.id=ator.id
     editarBtn.onclick=editarAtor
 
     editarBtn.append(editarImg)
@@ -90,7 +90,7 @@ async function preencherTela(){
 
 async function deletarAtor(){
     const idAtorDelete=this.id
-    await deletarAtor(idAtorDelete)
+    await deleteAtor(idAtorDelete)
     window.location.reload()
 }
 
