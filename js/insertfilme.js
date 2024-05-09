@@ -31,11 +31,10 @@ function pegarDados(){
     const classificacao = document.getElementById('classificacao').value;
     JSONFilme.id_classificacao=classificacao
     if(relancamento==null||relancamento==undefined||relancamento=='')
-        return JSONFilme
-    else{
+        JSONFilme.data_relancamento=null
+    else
         JSONFilme.data_relancamento=relancamento
-        return JSONFilme
-    }
+    return JSONFilme
 }
 
 async function inserirFilme(){

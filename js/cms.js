@@ -101,8 +101,8 @@ async function deletarFilme(){
 }
 
 function editarFilme(){
-    const idFilmeEdit=this.id
-    console.log(idFilmeEdit)
+    localStorage.setItem('idFilme', this.id)
+    window.location.href='../html/updatefilme.html'
 }
 
 preencherTela()

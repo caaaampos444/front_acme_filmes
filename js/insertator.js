@@ -19,13 +19,11 @@ function pegarDados(){
     JSONAtor.data_nascimento=document.getElementById('nascimento').value
     JSONAtor.id_sexo=document.getElementById('sexo').value
     JSONAtor.foto=document.getElementById('link').value
-    console.log(JSONAtor)
     if(falecimento==null||falecimento==undefined||falecimento=='')
-        return JSONAtor
-    else{
+        JSONAtor.data_falecimento=null
+    else
         JSONAtor.data_falecimento=falecimento
-        return JSONAtor
-    }
+    return JSONAtor
 }
 
 async function inserirAtor(){
