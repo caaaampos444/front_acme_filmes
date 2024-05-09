@@ -8,6 +8,14 @@ function pegarDados(){
     const JSONFilme={}
     const titulo=document.getElementById('titulo').value
     JSONFilme.nome=titulo
+    const checkboxes = document.querySelectorAll('.posterFilme input[type="checkbox"]');
+    const checkboxesSelecionados = []
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked)
+            checkboxesSelecionados.push(checkbox.id);
+    });
+    JSONFilme.id_genero=checkboxesSelecionados
+    console.log(checkboxesSelecionados);
     const sinopse=document.getElementById('sinopse').value
     JSONFilme.sinopse=sinopse
     const duracao=document.getElementById('duracao').value

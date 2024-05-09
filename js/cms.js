@@ -21,18 +21,31 @@ function criarTr(filme){
     duracao.textContent=duracao_exemplo.substring(11, 19)
     
     const data_lancamento=document.createElement('td')
-    data_lancamento.classList.add('px-6', 'py-4', 'bg-white', 'max-w-sinopsemaxw')
+    data_lancamento.classList.add('px-6', 'py-4', 'bg-white', 'max-w-sinopsemaxw', 'items-center', 'justify-center')
     const data_lancamento_exemplo=filme.data_lancamento
     data_lancamento.textContent=data_lancamento_exemplo.substring(0, 10)
 
     const data_relancamento=document.createElement('td')
-    data_relancamento.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800')
+    data_relancamento.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800', 'max-w-[20px]')
     if(filme.data_relancamento==null)
         data_relancamento.textContent='Este filme não possui data de relançamento.'
     else{
         const data_relancamento_exemplo=filme.data_relancamento
         data_relancamento.textContent=data_relancamento_exemplo.substring(0, 10)
     }
+
+    const generos=document.createElement('td')
+    let arrayGeneros = []
+    generos.classList.add('px-6', 'py-4', 'bg-white', 'max-w-[180px]')
+    filme.generos.forEach(genero => {
+        arrayGeneros.push(genero.nome)
+    })
+    const todosOsGeneros = arrayGeneros.join(', ')
+    generos.textContent = todosOsGeneros
+
+    const classificacao=document.createElement('td')
+    classificacao.classList.add('px-6', 'py-4', 'bg-gray-50', 'dark:bg-gray-800', 'max-w-[200px]')
+    classificacao.textContent=filme.classificacao[0].classificacao
 
     const foto_capa_td=document.createElement('td')
     foto_capa_td.classList.add('px-6', 'py-4', 'bg-white')
@@ -68,8 +81,7 @@ function criarTr(filme){
     deletarBtn.append(deletarImg)
     deletar.append(deletarBtn)
     foto_capa_td.append(foto_capa)
-    tr.append(titulo, sinopse, duracao, data_lancamento, data_relancamento, foto_capa_td, valor, deletar, editar)
-   
+    tr.append(titulo, sinopse, duracao, data_lancamento, data_relancamento, generos, classificacao, foto_capa_td, valor, deletar, editar)
     return tr
 }
 

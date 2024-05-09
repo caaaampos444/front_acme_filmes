@@ -25,7 +25,7 @@ export async function postAtor(ator){
     return response.ok
 }
 
-export async function putAtor(ator){
+export async function putAtor(ator, id){
     const url=`http://localhost:8080/v2/acmefilmes/ator/update/${id}`
     const options={
         method: 'PUT',

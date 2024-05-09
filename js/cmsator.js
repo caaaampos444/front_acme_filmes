@@ -95,8 +95,8 @@ async function deletarAtor(){
 }
 
 function editarAtor(){
-    const idAtorEdit=this.id
-    console.log(idAtorEdit)
+    localStorage.setItem('idAtor', this.id)
+    window.location.href="../html/updateator.html"
 }
 
 preencherTela()
